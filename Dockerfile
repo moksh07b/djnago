@@ -7,10 +7,9 @@ WORKDIR /app/backend
 # Copy only requirements.txt first (better for Docker caching)
 COPY requirements.txt /app/backend/
 
-# Install system dependencies
+# Install system dependencies required for MySQL client
 RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y gcc default-libmysqlclient-dev pkg-config \
+    && apt-get install -y gcc default-libmysqlclient-dev libmysqlclient-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
