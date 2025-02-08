@@ -9,7 +9,7 @@ COPY requirements.txt /app/backend/
 
 # Install system dependencies required for MySQL client
 RUN apt-get update \
-    && apt-get install -y gcc default-libmysqlclient-dev libmysqlclient-dev pkg-config \
+    && apt-get install -y gcc default-libmysqlclient-dev libmariadb-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
